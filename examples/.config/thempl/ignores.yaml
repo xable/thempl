@@ -1,0 +1,5 @@
+# Files matching these regex patterns are skipped during rendering
+- '^.*~$'
+- '^.*\.swp$'
+- '^.*\.bak$'
+- '^.*\.gitkeep$'

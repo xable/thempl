@@ -1,0 +1,42 @@
+# thempl example — {{ theme.name }} theme
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = {{ font_size }}
+
+[font.normal]
+family = "{{ term_fonts[0] }}"
+
+[font.bold]
+style = {% if use_bold %}"Bold"{% else %}"Regular"{% endif %}
+
+[colors.primary]
+background = "{{ theme.background }}"
+foreground = "{{ theme.foreground }}"
+
+[colors.normal]
+black   = "{{ theme.black }}"
+red     = "{{ theme.red }}"
+green   = "{{ theme.green }}"
+yellow  = "{{ theme.yellow }}"
+blue    = "{{ theme.blue }}"
+magenta = "{{ theme.magenta }}"
+cyan    = "{{ theme.cyan }}"
+white   = "{{ theme.white }}"
+
+[colors.bright]
+black   = "{{ theme.black }}"
+red     = "{{ theme.red }}"
+green   = "{{ theme.green }}"
+yellow  = "{{ theme.yellow }}"
+blue    = "{{ theme.blue }}"
+magenta = "{{ theme.magenta }}"
+cyan    = "{{ theme.cyan }}"
+white   = "{{ theme.white }}"
+
+[window]
+padding.x = {{ padding.left }}
+padding.y = {{ padding.top }}
+decorations = "None"

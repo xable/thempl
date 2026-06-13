@@ -1,0 +1,42 @@
+! thempl example — {{ theme.name }} theme
+! https://github.com/user/thempl
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
+! Colors
+*.foreground:   {{ theme.foreground }}
+*.background:   {{ theme.background }}
+*.cursorColor:  {{ theme.foreground }}
+
+*.color0:  {{ theme.black }}
+*.color8:  {{ theme.black }}
+*.color1:  {{ theme.red }}
+*.color9:  {{ theme.red }}
+*.color2:  {{ theme.green }}
+*.color10: {{ theme.green }}
+*.color3:  {{ theme.yellow }}
+*.color11: {{ theme.yellow }}
+*.color4:  {{ theme.blue }}
+*.color12: {{ theme.blue }}
+*.color5:  {{ theme.magenta }}
+*.color13: {{ theme.magenta }}
+*.color6:  {{ theme.cyan }}
+*.color14: {{ theme.cyan }}
+*.color7:  {{ theme.white }}
+*.color15: {{ theme.white }}
+
+! Font — iterating over an array
+*.font: {% for f in term_fonts -%}
+  xft:{{ f }}:pixelsize={{ font_size }}:antialias=true,
+{%- endfor %}
+
+! Letter spacing
+*.letterSpace: {{ term_letterspace }}
+
+! Bold — conditional
+{% if use_bold %}
+*.boldFont: xft:{{ term_fonts[0] }}:pixelsize={{ font_size }}:weight=bold,
+{% endif %}

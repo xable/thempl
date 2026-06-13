@@ -1,0 +1,36 @@
+# thempl defaults — base variables
+# Overridden by variable_sets/*.yaml
+
+# == Fonts ==
+term_fonts:
+  - "JetBrains Mono"
+  - "Noto Color Emoji"
+font_size: 12
+term_letterspace: 1
+
+# == Colors (tokyo-night inspired) ==
+theme:
+  name: "tokyo-night"
+  background: "#1a1b26"
+  foreground: "#c0caf5"
+  black:   "#1d202f"
+  red:     "#f7768e"
+  green:   "#9ece6a"
+  yellow:  "#e0af68"
+  blue:    "#7aa2f7"
+  magenta: "#bb9af7"
+  cyan:    "#7dcfff"
+  white:   "#a9b1d6"
+
+# == UI ==
+use_bold: true
+border_width: 2
+padding:
+  top: 5
+  bottom: 5
+  left: 10
+  right: 10
+
+# == Variable references (shallow resolved) ==
+bg: "{{ theme.background }}"
+fg: "{{ theme.foreground }}"

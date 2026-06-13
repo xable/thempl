@@ -1,0 +1,61 @@
+/* thempl example — {{ theme.name }} theme */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "{{ term_fonts[0] }}";
+    font-size: {{ font_size }}pt;
+    min-height: 0;
+}
+
+window#waybar {
+    background: {{ theme.background }};
+    color: {{ theme.foreground }};
+}
+
+#workspaces button {
+    padding: 0 {{ padding.left }}px;
+    background: transparent;
+    color: {{ theme.foreground }};
+}
+
+#workspaces button.active {
+    background: {{ theme.blue }};
+    color: {{ theme.background }};
+}
+
+#workspaces button.urgent {
+    background: {{ theme.red }};
+}
+
+#clock {
+    color: {{ theme.cyan }};
+    padding: 0 {{ padding.right }}px;
+}
+
+#battery {
+    color: {{ theme.green }};
+}
+
+#battery.warning {
+    color: {{ theme.yellow }};
+}
+
+#battery.critical {
+    color: {{ theme.red }};
+}
+
+#network {
+    color: {{ theme.magenta }};
+}
+
+#pulseaudio {
+    color: {{ theme.blue }};
+}
+
+/* Loop to generate utility classes */
+{% for color_name in ["red", "green", "blue", "yellow", "magenta", "cyan"] %}
+.tag-{{ color_name }} {
+    color: {{ theme[color_name] }};
+}
+{% endfor %}

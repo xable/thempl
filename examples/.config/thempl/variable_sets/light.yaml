@@ -1,0 +1,15 @@
+# Light theme
+theme:
+  name: "light"
+  background: "#ffffff"
+  foreground: "#1a1b26"
+  black:   "#f0f0f0"
+  red:     "#d00000"
+  green:   "#008000"
+  yellow:  "#b8860b"
+  blue:    "#1e90ff"
+  magenta: "#8b008b"
+  cyan:    "#00bfff"
+  white:   "#2e2e2e"
+
+border_width: 1
